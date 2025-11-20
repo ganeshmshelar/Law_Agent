@@ -8,6 +8,8 @@ Features:
 
 DISCLAIMER: This is for informational purposes only, not legal advice.
 """
+import os
+import re
 # Fix for Hugging Face Spaces environment
 if 'SPACE_ID' in os.environ:
     # Running on Hugging Face
@@ -15,8 +17,6 @@ if 'SPACE_ID' in os.environ:
     os.environ['STREAMLIT_SERVER_PORT'] = '8501'
     os.environ['STREAMLIT_SERVER_ADDRESS'] = '0.0.0.0'
 
-import os
-import re
 import json
 from typing import List, Tuple, Dict, Any
 import streamlit as st
@@ -767,3 +767,4 @@ st.markdown(f"""
 if __name__ == "__main__":
 
     main()
+
