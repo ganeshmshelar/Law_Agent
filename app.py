@@ -8,6 +8,12 @@ Features:
 
 DISCLAIMER: This is for informational purposes only, not legal advice.
 """
+# Fix for Hugging Face Spaces environment
+if 'SPACE_ID' in os.environ:
+    # Running on Hugging Face
+    os.environ['STREAMLIT_SERVER_HEADLESS'] = 'true'
+    os.environ['STREAMLIT_SERVER_PORT'] = '8501'
+    os.environ['STREAMLIT_SERVER_ADDRESS'] = '0.0.0.0'
 
 import os
 import re
@@ -759,4 +765,5 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
+
     main()
